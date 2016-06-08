@@ -1,6 +1,18 @@
 # 转换
+* 首先需要关闭即将被准换的虚拟机。
+
 * Windows
+  > **注意**：
+  > 如果即将被转换的虚拟机的操作系统是 `Windows`，那么需要安装下面两个包：
+    ~~~ bash
+    yum -y install libguestfs-winsupport
+    yum -y install virtio-win
+    ~~~
+
   1. Win 7
+     ~~~ shell
+     
+     ~~~
   2. Win 8
   3. Win Server 2008 R2
      ~~~ shell

@@ -7,7 +7,7 @@
   * Windows 7 / 8
   * Windows 2003 R2 / 2008 R2
   * Windows 2003 / 2008
-  * CentOS / RedHat
+  * CentOS
   * Suse
 
   > **注意**：
@@ -20,9 +20,7 @@
     virt-v2v: error: because of libvirt bug
     https://bugzilla.redhat.com/show_bug.cgi?id=1134592 you must set this
     environment variable:
-
     export LIBGUESTFS_BACKEND=direct
-
     and then rerun the virt-v2v command.
     ~~~
 
@@ -31,22 +29,27 @@
      ~~~ bash
      virt-v2v -v -x -o ovirt -os 192.168.2.56:/home/ply/workspace/storage/Export --network eayunosmgmt win7
      ~~~
+
   2. Win 8
      ~~~ bash
      virt-v2v -v -x -o ovirt -os 192.168.2.56:/home/ply/workspace/storage/Export --network eayunosmgmt win8
      ~~~
+
   3. Win Server 2008 R2
      ~~~ bash
      virt-v2v -v -x -o ovirt -os 192.168.2.56:/home/ply/workspace/storage/Export --network eayunosmgmt win2k8_R2
      ~~~
+
   4. Win Server 2008
      ~~~ bash
      virt-v2v -v -x -o ovirt -os 192.168.2.56:/home/ply/workspace/storage/Export --network eayunosmgmt win2k8
      ~~~
+
   5. Win Server 2003 R2
      ~~~ bash
      virt-v2v -v -x -o ovirt -os 192.168.2.56:/home/ply/workspace/storage/Export --network eayunosmgmt win2k3r2
      ~~~
+
   6. Win Server 2003
      ~~~ bash
      virt-v2v -v -x -o ovirt -os 192.168.2.56:/home/ply/workspace/storage/Export --network eayunosmgmt wink2k3
@@ -56,6 +59,7 @@
      ~~~ bash
      virt-v2v -v -x -o ovirt -os 192.168.2.56:/home/ply/workspace/storage/Export --network eayunosmgmt opensuse13.1
      ~~~
+
   8. CentOS
      ~~~ bash
      virt-v2v -v -x -o ovirt -os 192.168.2.56:/home/ply/workspace/storage/Export --network eayunosmgmt centos7.0

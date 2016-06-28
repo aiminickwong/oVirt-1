@@ -38,27 +38,39 @@
 6. 新建虚拟机
    1. 【选择如何安装操作系统】—— 这里我选择的是【本地安装介质】
    2. ![new](../images/virt-manager1.png) 
+      
       选择本地的 ISO 镜像。
    3. 我的 ISO 文件放在 `/home/virt-manager` 了目录中。
+
       ![iso](../images/virt-manager2.png)
+
       点击【选择卷】按钮。 
    4. 选择相应的操作系统类型和版本
+
       ![os](../images/virt-manager3.png)
    5. 设置内存和虚拟 CPU 个数
+
       ![mem](../images/virt-manager4.png)
    6. 选择存储，这里我选择第二个选项【选择管理的或者其它现有存储】
+
       ![storage](../images/virt-manager5.png)
       ![select](../images/virt-manager6.png)
       ![create](../images/virt-manager7.png)
       ![select_lvm](../images/virt-manager8.png)
+
       点击【选择卷】按钮。
+
       ![go](../images/virt-manager9.png)
+      
       点击【前进】按钮。
+      
       > **重要**
       > 为新建的磁盘添加写权限
         ![write](../images/virt-manager11.png)
    7. 选择网络
+
       ![network](../images/virt-manager10.png)
+
       点击【完成】按钮。
 
 7. 开启虚拟机

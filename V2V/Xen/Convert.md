@@ -11,8 +11,8 @@
      -     win7                           shut off  # 转换前一定要确保关机了。
      ~~~
 
-* 开始转换
-  * **本地安装**：
+* 转换
+  * **本地转换**：
     1. 获取 Xen 虚拟机的 XML：
        ~~~ bash
        root@debian:/home/helen/workspace# virsh list --all

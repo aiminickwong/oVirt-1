@@ -12,28 +12,66 @@
           ~~~ bash
           yum -y install libguestfs-winsupport
           yum -y install virtio-win
+          yum -y install virt-v2v
           ~~~
- 
+
         * 虚拟机 OS 为 Linux：
           ~~~ bash
           yum -y install virt-v2v
           ~~~
-  
+
    * VMware ESX(i) 平台
      1. 一台需要被转换的 `ESX(i)` 中创建的虚拟机。
-     2. 在**任意一台可以正常使用的机器**中安装以下包：
-        * 虚拟机 OS 为 Windows：
+     2. 在**EayunOS 的 node **中验证是否有以下包：
+        * 如果虚拟机 OS 为 Windows，需要验证：
           ~~~ bash
-          yum -y install libguestfs-winsupport
-          yum -y install virtio-win
+          [root@35host ~]# rpm -qa | grep libguestfs-winsupport
+          libguestfs-winsupport-7.2-1.el7.x86_64
+          [root@35host ~]# rpm -qa | grep virtio-win
+          virtio-win-drivers-0.1-105.fc22.noarch
+          [root@35host ~]# rpm -qa | grep virt-v2v
+          virt-v2v-1.28.1-1.55.el7.centos.4.x86_64
           ~~~
- 
-        * 虚拟机 OS 为 Linux：
+
+        * 如果虚拟机 OS 为 Linux，只需要验证：
           ~~~ bash
-          yum -y install virt-v2v
+          [root@35host ~]# rpm -qa | grep virt-v2v
+          virt-v2v-1.28.1-1.55.el7.centos.4.x86_64
           ~~~
-  
-   
+
+   * Xen 平台：关于 Xen 虚拟机的转换，可以采取远程和本地两种转换方式：
+     1. 采用远程转换的方式（即，在 EayunOS 的 node 中进行转换）：
+        1. 一台需要被转换的 Xen 的虚拟机。
+        2. 在**EayunOS 的 node **中验证是否有以下包：
+           * 如果虚拟机 OS 为 Windows，需要验证：
+              ~~~ bash
+              [root@35host ~]# rpm -qa | grep libguestfs-winsupport
+              libguestfs-winsupport-7.2-1.el7.x86_64
+              [root@35host ~]# rpm -qa | grep virtio-win
+              virtio-win-drivers-0.1-105.fc22.noarch
+              [root@35host ~]# rpm -qa | grep virt-v2v
+              virt-v2v-1.28.1-1.55.el7.centos.4.x86_64
+              ~~~
+
+           * 如果虚拟机 OS 为 Linux，只需要验证：
+              ~~~ bash
+              [root@35host ~]# rpm -qa | grep virt-v2v
+              virt-v2v-1.28.1-1.55.el7.centos.4.x86_64
+              ~~~
+     2. 采用本地转换的方式：
+        1. 一台需要被转换的 Xen 的虚拟机。
+        2. 在**该虚拟机所属的主机**中安装以下包：
+           * 虚拟机 OS 为 Windows：
+             ~~~ bash
+             yum -y install libguestfs-winsupport
+             yum -y install virtio-win
+             yum -y install virt-v2v
+             ~~~
+
+           * 虚拟机 OS 为 Linux：
+             ~~~ bash
+             yum -y install virt-v2v
+             ~~~
 
 ## 转换虚拟机
 `virt-v2v` 命令可以对其他虚拟机监控程序（hypervisor）上运行的虚拟机进行转换，从而在 EayunOS 虚拟化管理平台上运行起来。想要在 EayunOS 管理平台上使用其他 Hypervisor 的虚拟机，分为一下两个步骤：
